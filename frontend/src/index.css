@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Grand Stay design tokens — match the booking flow designs on the canvas. */
+@theme {
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Manrope", sans-serif;
+
+  --color-ground: #f6f7f5;
+  --color-ink: #14201c;
+  --color-ink-soft: #24332e;
+  --color-muted: #4b5a55;
+  --color-line: #dde3e0;
+  --color-field: #b9c4c0;
+  --color-chip: #eef1ef;
+
+  --color-brand: #1e5b4f;
+  --color-brand-dark: #143f37;
+  --color-brand-soft: #e3eeea;
+  --color-mint: #a9d3c7;
+
+  --color-warn-bg: #fbf1df;
+  --color-warn-line: #e7c98f;
+  --color-warn-ink: #5e3f0c;
+  --color-amber: #8a5d14;
+
+  --color-error-bg: #fbe7e4;
+  --color-error-ink: #8a1f12;
+}
+
+@layer base {
+  body {
+    @apply bg-ground font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-white;
+  }
+
+  .field-label {
+    @apply text-sm font-bold;
+  }
+
+  .field-input {
+    @apply h-12 w-full rounded-[10px] border border-field bg-white px-3 text-ink;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-[10px] bg-brand px-5 font-bold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}
